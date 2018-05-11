@@ -2,10 +2,10 @@ import os
 import rdflib
 import sys
 
-class InstanceDataExtractor(object):
+class InstanceExtractor(object):
 	
 	"""
-	InstanceDataExtractor class returns s,p,o from the dataset
+	InstanceDataExtractor class returns objects from the dataset
 	
 	"""
 
@@ -13,7 +13,8 @@ class InstanceDataExtractor(object):
 		self.fname = fname
 
 
-	def get_instances(self, num):
+	def get_instances(self, num=5):
+		# default number of instances are set to 5
 		if os.path.exists(os.path.join('data/', self.fname)):
 			print 'parsing contents from ' + self.fname + '...'
 			content = ''
@@ -27,6 +28,7 @@ class InstanceDataExtractor(object):
 			output = []
 			for sub, pred, obj in graph:
 				if type(obj) == rdflib.term.Literal:
+					print obj.encode('utf-8')
 					output.append(obj.toPython())
 				'''
 				Subject type : rdflib.term.URIRef
@@ -38,7 +40,7 @@ class InstanceDataExtractor(object):
 			print 'dataset does not exist - check for filename'
 
 def main():
-	test = InstanceDataExtractor('sample.rdf').get_instances(2)
+	test = InstanceExtractor('udvietnamese.rdf').get_instances(10)
 	print test
 
 if __name__ == '__main__':
