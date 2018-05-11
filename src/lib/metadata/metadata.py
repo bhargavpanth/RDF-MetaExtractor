@@ -2,6 +2,46 @@ import os
 import rdflib
 import sys
 
+'''
+Dct: title
+Dct: subject
+dcterms:description
+Dcterms: descriptor
+Dcterms: subject
+dct:title
+dct:description
+dct:creator
+dct:publisher
+dct:license
+dcat:keyword
+dcat:theme
+
+rdfs:comment
+rdf:Description
+
+Void: Dataset
+Void: sparlqlEndpoint
+Void: urilookupendpoint
+
+Dataid:dataset properties
+dataid:identifierScheme
+dataid:dataDescription
+dataid:similarData
+
+void:vocabulary
+
+dublinCore: Description
+dublinCore: Identifier
+dublinCore: Publisher (Required?)
+dublinCore: Subject
+dublinCore: Title
+dublinCore: Type (gives the nature of the resource)
+
+Skos: related
+Skos: topConceptOf
+
+'''
+
 class MetaDataExtractor(object):
 	
 	"""

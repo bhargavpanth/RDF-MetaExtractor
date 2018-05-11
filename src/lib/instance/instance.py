@@ -13,7 +13,7 @@ class InstanceExtractor(object):
 		self.fname = fname
 
 
-	def get_instances(self, num=5):
+	def get_instances(self, num=5, trips='default'):
 		# default number of instances are set to 5
 		if os.path.exists(os.path.join('data/', self.fname)):
 			print 'parsing contents from ' + self.fname + '...'
