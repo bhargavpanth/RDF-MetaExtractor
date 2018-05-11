@@ -1,8 +1,13 @@
 import os
 import rdflib
 import sys
+import xml.etree.ElementTree as ET
 
 '''
+-----------------------------------------
+| Search dataset for the following tags |
+-----------------------------------------
+
 Dct: title
 Dct: subject
 dcterms:description
@@ -23,7 +28,6 @@ Void: Dataset
 Void: sparlqlEndpoint
 Void: urilookupendpoint
 
-Dataid:dataset properties
 dataid:identifierScheme
 dataid:dataDescription
 dataid:similarData
@@ -52,15 +56,39 @@ class MetaDataExtractor(object):
 	def __init__(self, fname):
 		self.fname = fname
 
-	def get_metadata_tags(self):
-		if os.path.exists(os.path.join('data/', self.fname)):
+	def get_metadata(self):
+		g = rdflib.Graph()
+		file = os.path.join('data/', self.fname)
+		if os.path.exists(file):
 			print 'parsing contents from ' + self.fname + '...'
-			
+			'''
+			RDF(S) datasets are XML files - parse tags from the list
+			'''
+			tree = ET.parse(file)
+			root = tree.getroot()
+			print root.findall('rdf:RDF')
+			return root
+
+			'''
+			# querying the RDF dataset
+			g.parse(file)
+			qres = g.query(
+				"""SELECT DISTINCT ?aname ?bname
+				WHERE {
+				?a foaf:knows ?b .
+				?a foaf:name ?aname .
+				?b foaf:name ?bname .
+			}""")
+		
+			for row in qres:
+			    print("%s knows %s" % row)
+			'''
 		else:
 			print 'dataset does not exist - check for filename'
 
 def main():
-	test = MetaDataExtractor('sample.rdf').get_instances()
+	test = MetaDataExtractor('sample.rdf').get_metadata()
+	print test
 
 if __name__ == '__main__':
 	main()
