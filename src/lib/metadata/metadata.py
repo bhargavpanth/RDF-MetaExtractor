@@ -66,7 +66,9 @@ class MetaDataExtractor(object):
 			'''
 			tree = ET.parse(file)
 			root = tree.getroot()
-			print root.findall('rdf:RDF')
+			namespaces = {'rdf' : 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'}
+			print root.findall('rdf:Description', namespaces)
+			# print root.findall('rdf:Description')
 			return root
 
 			'''
