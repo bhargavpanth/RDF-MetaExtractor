@@ -1,0 +1,16 @@
+<rdf:RDF xml:base="http://dbpedia.org/ontology/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://dbpedia.org/ontology/">
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/BasketballLeague">
+        <rdfs:label xml:lang="en">basketball league</rdfs:label>
+        <rdfs:comment xml:lang="en">
+          a group of sports teams that compete against each other
+          in Basketball
+        </rdfs:comment>
+    </owl:Class>
+
+</rdf:RDF>

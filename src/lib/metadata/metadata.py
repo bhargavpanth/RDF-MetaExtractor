@@ -52,15 +52,33 @@ class MetaDataExtractor(object):
 	MetaData class returns s,p,o from the dataset
 	
 	"""
-	
+
 	def __init__(self, fname):
 		self.fname = fname
+
+
+	def __validate(self):
+		try:
+			os.path.join('data/', self.fname)
+		except Exception as e:
+			raise
+		else:
+			try:
+				ET.fromstring(os.path.join('data/', self.fname))
+			except Exception as e:
+				raise
+			else:
+				print 'valid RDF/XML dataset'
+		finally:
+			print 'dataset does not exist' 
+
 
 
 	# list the namespaces in the RDF file
 	def get_namespaces(self):
 		namespaces = dict([node for _, node in ET.iterparse(os.path.join('data/', self.fname), events=['start-ns'])])
 		return namespaces
+
 
 
 	def get_metadata(self):
@@ -74,13 +92,22 @@ class MetaDataExtractor(object):
 			# list all namespaces to be checked - datasets with unconventional shorthands or names will induce warnings
 			namespace_list = [{'rdf' : 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'}, {'rdfs' : 'http://www.w3.org/2000/01/rdf-schema#'}, {'skos' : 'http://www.w3.org/2008/05/skos#'}, {'dcat' : 'http://www.w3.org/ns/dcat#'}, {'dct' : 'http://purl.org/dc/terms/'}, {'dctype' : 'http://purl.org/dc/dcmitype/'}, {'dc'}, {'void'}, {'dataid'}, {'dbp' : 'http://dbpedia.org/ontology/'}, {'dbprop' : 'http://dbpedia.org/property/'}, {'foaf' : 'http://xmlns.com/foaf/0.1/'}]
 			namespaces = {'rdf' : 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'}
-			return root.findall('rdf:Description', namespaces)
+			# return root.findall('rdf:Description', namespaces)
+			
+			tag_list = []
+			try:
+				desc = root.findall('rdf:Description', namespaces)
+			except Exception as e:
+				pass
+			else:
+				tag_list.append(desc)
+			
 		else:
 			print 'dataset does not exist - check for filename'
 
 
 def main():
-	# test = MetaDataExtractor('sample.rdf').get_metadata()
+	# test = MetaDataExtractor('sample_two.rdf').get_metadata()
 	test = MetaDataExtractor('udvietnamese.rdf').get_namespaces()
 	print test
 
