@@ -57,9 +57,9 @@ class MetaDataExtractor(object):
 		self.fname = fname
 
 	# file path returns the file object
-	def __file_path(self):
-		if os.path.exists(os.path.join('data/', self.fname)):
-			file = os.path.join('data/', self.fname)
+	def __file_path(self, fname):
+		if os.path.exists(os.path.join('data/', fname)):
+			file = os.path.join('data/', fname)
 			return file
 		else:
 			print 'filename does not exist'
@@ -72,11 +72,33 @@ class MetaDataExtractor(object):
 
 
 	def rdf(self):
-		pass
+		file = self.__file_path(self.fname)
+		tree = ET.parse(file)
+		root = tree.getroot()
+		namespaces = {'rdf' : 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'}
+		tag_list = []
+		try:
+			desc = root.findall('rdf:Description', namespaces)
+		except Exception as e:
+			raise
+		else:
+			tag_list.append(desc)
+		return tag_list
 
 	
 	def rdfs(self):
-		pass
+		file = self.__file_path(self.fname)
+		tree = ET.parse(file)
+		root = tree.getroot()
+		namespaces = {'rdfs' : 'http://www.w3.org/2000/01/rdf-schema#'}
+		tag_list = []
+		try:
+			desc = root.findall('rdfs:comment', namespaces)
+		except Exception as e:
+			raise
+		else:
+			tag_list.append(desc)
+		return tag_list
 
 
 	def dcat(self):
