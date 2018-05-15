@@ -23,6 +23,7 @@ dcat:keyword
 dcat:theme
 
 rdfs:comment
+
 rdf:Description
 
 Void: Dataset
@@ -118,7 +119,21 @@ class MetaDataExtractor(object):
 
 
 	def skos(self):
-		pass
+		# {'skos' : 'http://www.w3.org/2008/05/skos#'}
+		# Skos:related
+		# Skos:topConceptOf
+		file = self.__file_path(self.fname)
+		tree = ET.parse(file)
+		root = tree.getroot()
+		namespaces = {'skos' : 'http://www.w3.org/2008/05/skos#'}
+		tag_list = []
+		try:
+			desc = root.findall('skos:related', namespaces)
+		except Exception as e:
+			raise
+		else:
+			tag_list.append(desc)
+		return tag_list
 
 
 	def get_metadata(self):
