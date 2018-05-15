@@ -1,5 +1,6 @@
 import urllib
 import requests
+import pprint
 
 
 class VocabularyProfiler(object):
@@ -46,15 +47,31 @@ class VocabularyProfiler(object):
 
 
 	def query_sparql_for_vocab(self):
-		# query to find the set of IRI / vocabs 
+		# query to find the set of IRI / vocabs
+		
 		query = """
-				SELECT DISTINCT ?subject ?predicate ?object
-				WHERE { 
-					?subject ?predicate ?object
+				select distinct ?ns where {
+					[] ?p [] .
+					bind( replace( str(?p), "(#|/)[^#/]*$", "$1" ) as ?ns )
 				}
 				"""
-		response = requests.post(self.url, data={'query': query})
-		return response.json()
+		'''
+		query = """
+				SELECT DISTINCT ?ns
+				WHERE { 
+   					?class ?label ?description.
+   					BIND(REPLACE(str(?class), "(#|/)[^#/]*$", "$1") AS ?ns)
+   					Filter(isURI(?class))
+				}
+				"""
+		'''
+		try:
+			response = requests.post(self.url, data={'query': query})
+		except Exception as e:
+			raise
+		else:
+			return response.json()
+		
 
 
 	def query_sparql_for_class(self):
@@ -70,16 +87,19 @@ class VocabularyProfiler(object):
   					OPTIONAL { ?class rdfs:comment ?description}
 				}
 				"""
-		response = requests.post(self.url, data={'query': query})
-		return response.json()
-
-
+		try:
+			response = requests.post(self.url, data={'query': query})
+		except Exception as e:
+			raise
+		else:
+			return response.json()
 
 
 
 def main():
-	test = VocabularyProfiler('http://localhost:3030/ds/sparql', 'test').query_sparql_for_vocab()
-	print test
+	test = VocabularyProfiler('http://localhost:3030/ds/sparql', 'test').query_sparql_for_class()
+	# pp = pprint.PrettyPrinter()
+	# pp.pprint(test)
 
 
 if __name__ == '__main__':
