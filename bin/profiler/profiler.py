@@ -1,6 +1,7 @@
 import urllib
 import requests
 import pprint
+import os
 
 
 class VocabularyProfiler(object):
@@ -48,7 +49,7 @@ class VocabularyProfiler(object):
 
 	def query_sparql_for_vocab(self):
 		# query to find the set of IRI / vocabs
-		
+		'''
 		query = """
 				select distinct ?ns where {
 					[] ?p [] .
@@ -64,13 +65,14 @@ class VocabularyProfiler(object):
    					Filter(isURI(?class))
 				}
 				"""
-		'''
+		
 		try:
 			response = requests.post(self.url, data={'query': query})
 		except Exception as e:
 			raise
 		else:
-			return response.json()
+			res = response.json()
+			return res
 		
 
 
@@ -92,12 +94,30 @@ class VocabularyProfiler(object):
 		except Exception as e:
 			raise
 		else:
-			return response.json()
+			res = response.json()
+			return res
+
+
+
+	def persistent_vocabulary_store(self):
+		'''
+		* Create self.label labelled file and store the vocabulary IRIs in it
+		* Do not replace/update the IRI/IRI-count 
+		'''
+		domain = self.label
+		fname = os.path.join('./res/', domain)
+		with open(fname, 'w') as file:
+			file.write()
+
 
 
 
 def main():
-	test = VocabularyProfiler('http://localhost:3030/ds/sparql', 'test').query_sparql_for_class()
+	test = VocabularyProfiler('http://localhost:3030/ds/sparql', 'test').query_sparql_for_vocab()
+	# print test['results']['bindings']
+	result_set = test['results']['bindings']
+	for each_res in result_set:
+		print each_res['ns']['value']
 	# pp = pprint.PrettyPrinter()
 	# pp.pprint(test)
 

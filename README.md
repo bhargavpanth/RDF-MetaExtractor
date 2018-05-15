@@ -6,3 +6,4 @@
 * Download the project ```git clone 'https://github.com/bhargavpanth/RDF-MetaExtractor.git'```
 * ```cd RDF-MetaExtractor/```
 * ```git checkout fuseki-base```
+* ```sh setup.sh``` or ```sudo pip install -r requirements.txt```
