@@ -13,12 +13,22 @@ class VocabularyProfiler(object):
 			  		-> Assign lower scores to higher frequency vocabulary
 			  		-> Assign higher score to lower frequency/unique vocabulary
 			  		-> Convert scores into confidence values
-	Input
-	--------
-	* URL
-	* Query
-	* Dataset Label
+	
+	---------------------
+	|		Input		|
+	---------------------
+	| * SPARQL End point|
+	| * Query			|
+	| * Dataset label 	|
+	---------------------
+	
+	-----------------------------------------
+	|				Output				    |
+	-----------------------------------------
+	|* pairs [Vocabulary - confidence score]|
+	-----------------------------------------
 
+	
 	Note - Dataset labels are used to build a statistical model. Establish statistical relationship between label/class of the dataset to the vocabulary set used
 
 	* Metadata vocabs such as DCAT/DCTERMS/VOID might be present in almost all the datasets
