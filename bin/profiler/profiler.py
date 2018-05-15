@@ -99,25 +99,28 @@ class VocabularyProfiler(object):
 
 
 
-	def persistent_vocabulary_store(self):
+	def persistent_vocabulary_store(self, iri):
 		'''
 		* Create self.label labelled file and store the vocabulary IRIs in it
 		* Do not replace/update the IRI/IRI-count 
 		'''
 		domain = self.label
 		fname = os.path.join('./res/', domain)
-		with open(fname, 'w') as file:
-			file.write()
+		with open(fname, 'rb+') as file:
+			file.write(iri)
+		file.close()
 
 
 
 
 def main():
-	test = VocabularyProfiler('http://localhost:3030/ds/sparql', 'test').query_sparql_for_vocab()
+	test = VocabularyProfiler('http://localhost:3030/ds/sparql', 'test')
+	res = test.query_sparql_for_vocab()
 	# print test['results']['bindings']
-	result_set = test['results']['bindings']
+	result_set = res['results']['bindings']
 	for each_res in result_set:
-		print each_res['ns']['value']
+		iri = each_res['ns']['value']
+		test.persistent_vocabulary_store(iri)
 	# pp = pprint.PrettyPrinter()
 	# pp.pprint(test)
 
