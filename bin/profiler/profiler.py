@@ -108,7 +108,7 @@ class VocabularyProfiler(object):
 		fname = os.path.join('./res/', domain)
 		with open(fname, 'a') as file:
 			file.write(iri + '\n')
-		# file.close()
+		file.close()
 
 
 
