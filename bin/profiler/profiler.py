@@ -49,7 +49,7 @@ class VocabularyProfiler(object):
 
 	def query_sparql_for_vocab(self):
 		# query to find the set of IRI / vocabs
-		'''
+		
 		query = """
 				select distinct ?ns where {
 					[] ?p [] .
@@ -65,7 +65,7 @@ class VocabularyProfiler(object):
    					Filter(isURI(?class))
 				}
 				"""
-		
+		'''
 		try:
 			response = requests.post(self.url, data={'query': query})
 		except Exception as e:
@@ -106,9 +106,9 @@ class VocabularyProfiler(object):
 		'''
 		domain = self.label
 		fname = os.path.join('./res/', domain)
-		with open(fname, 'rb+') as file:
-			file.write(iri)
-		file.close()
+		with open(fname, 'a') as file:
+			file.write(iri + '\n')
+		# file.close()
 
 
 
