@@ -1,0 +1,48 @@
+title	datahub_url	last_updated	domain	resouce_url
+YAGO	https://old.datahub.io/dataset/yago	2016-07-30	Cross_domain	http://resources.mpi-inf.mpg.de/yago-naga/yago3.1/yago3.1_entire_ttl.7z
+Gemeinsame Normdatei (GND)	https://old.datahub.io/dataset/dnb-gemeinsame-normdatei	2017-07-21	Cross_domain	https://data.dnb.de/opendata/GND.rdf.gz
+Muninn World War I	https://old.datahub.io/dataset/muninn-world-war-i	2017-06-22	Cross_domain	http://rdf.muninn-project.org/Downloads/muninn-Dump-Latest.nq
+DBpedia	https://old.datahub.io/dataset/dbpedia	2017-06-20	Cross_domain	http://downloads.dbpedia.org/2015-10/dbpedia_2015-10.nt
+Geographic Names Information System (GNIS)	https://old.datahub.io/dataset/geographic-names-information-system-gnis	2017-06-16	Geography	http://usgs-stko.geog.ucsb.edu/resource/GNIS-LD.zip
+Yahoo Geoplanet RDF	https://old.datahub.io/dataset/yahoo_geoplanet	2016-07-30	Geography	http://archive.org/download/kasabi/yahoo-geoplanet.gz
+GeoWordNet	https://old.datahub.io/dataset/geowordnet	2016-07-30	Geography	https://sourceforge.net/projects/s-match/files/datasets/geowordnet-rdf-20110330.zip/download
+EARTh	https://old.datahub.io/dataset/environmental-applications-reference-thesaurus	2016-07-30	Geography	http://purl.oclc.org/net/DumpEarthRDF
+Institutions of public power of the Czech Republic	https://old.datahub.io/dataset/cz-ovm	2017-05-11	Government	https://linked.opendata.cz/soubor/ovm/ovm.trig.gz
+Registry of territorial identification, addresses and real estate of the Czech Republic	https://old.datahub.io/dataset/cz-ruian	2017-04-17	Government	https://ruian.linked.opendata.cz/soubor/ruian.zip
+Summary types of Czech institutions of public power	https://old.datahub.io/dataset/cz-souhrnne-typy-ovm	2017-04-10	Government	https://linked.opendata.cz/soubory/souhrnn%C3%A9-typy-ovm/souhrnn%C3%A9-typy-ovm.trig.gz
+GovAgriBus Denmark	https://old.datahub.io/dataset/govagribus-denmark	2017-03-05	Government	http://lod.cs.aau.dk/downloads/JIST14/GovAgriBus/agriculture.rdf
+GovAgriBus Denmark	https://old.datahub.io/dataset/govagribus-denmark	2017-03-05	Government	http://lod.cs.aau.dk/downloads/JIST14/GovAgriBus/business.rdf
+U.S. Securities and Exchange Commission Corporate Ownership RDF Data (rdfabout)	https://old.datahub.io/dataset/sec-rdfabout	2016-07-30	Government	http://www.govtrack.us/data/misc/sec.n3.gz
+Web NDL Authorities - National Diet Library of Japan	https://old.datahub.io/dataset/national-diet-library-authorities	2016-07-30	Government	http://iss.ndl.go.jp/ndla/wp-content/uploads/2011/04/ndlsh-rdf.zip
+Street level crime reports for England and Wales	https://old.datahub.io/dataset/rkb-explorer-crime	2016-07-30	Government	http://crime.rkbexplorer.com/models/2010-12.postcodes-rdf.tar.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/bindingdb.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/bindingmoad.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/chebi.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/chembl.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/chemogenomics.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/ctd.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/dcdb.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/dip.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/drugbank.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/hgnc.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/hprd.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/kegg.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/kidb.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/matador.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/medline_lite.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/medline.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/omim.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/pdb.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/pharmgkb.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/pubchem.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/qsar.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/reactome.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/sider.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/ttd.n3.gz
+Chem2Bio2RDF	https://old.datahub.io/dataset/chem2bio2rdf	2016-07-30	Life_sciences	http://cheminfov.informatics.indiana.edu:8080//download/uniprot.n3.gz
+GeoSpecies Knowledge Base	https://old.datahub.io/dataset/geospecies	2016-07-30	Life_sciences	http://lod.geospecies.org/ontology/geospecies.owl
+LinkedCT	https://old.datahub.io/dataset/linkedct	2016-07-30	Life_sciences	http://www.cs.toronto.edu/~oktie/linkedct/linkedct-live-dump-latest.nt.bz2
+DrugBank	https://old.datahub.io/dataset/fu-berlin-drugbank	2016-07-30	Life_sciences	http://www4.wiwiss.fu-berlin.de/drugbank/drugbank_dump.nt.bz2
+FrameBase schema	https://old.datahub.io/dataset/framebase-schema	2017-07-04	Linguistics	http://www.framebase.org/files/data/dump/schema/FrameBase_schema_core.ttl.gz
+associations	https://old.datahub.io/dataset/associations	2017-06-24	Linguistics	https://w3id.org/associations/mapping_eat_dbpedia.rdf
+Universal Dependencies Treebank Irish	https://old.datahub.io/dataset/universal-dependencies-treebank-irish	2017-06-17	Linguistics	https://datahub.io/dataset/e92a687f-fd4e-4d4d-85d6-544621586f75/resource/2f124d90-e144-479b-99df-30ae7bffc45e/download/udirish.rdf
