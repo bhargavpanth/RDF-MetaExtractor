@@ -1,4 +1,5 @@
 import os
+import errno
 import csv
 import urllib2
 
@@ -12,6 +13,8 @@ class Extractor(object):
 		# asking for file name only - not the file path
 		# ensure appropriate messages are set to the user 
 		self.fname = fname
+
+
 
 	def read_file(self):
 		# file path exists
@@ -32,6 +35,8 @@ class Extractor(object):
 			return False
 		# read TSV/CSV file
 
+
+
 	def download_from_url(self, url_):
 		if type(url_) is list:
 			# iterate over the list
@@ -46,8 +51,37 @@ class Extractor(object):
 			print 'invalid parameter passed as URL - type must be str'
 
 
+
 	def __request(self, url):
 		response = urllib2.urlopen(url)
+
+
+
+
+	def save_to_folder(self, folder_path):
+		if os.path.exists(folder_path):
+			# path exists
+			pass
+			
+		else:
+			# ask if that path needs to be created
+			print 'Create ' + folder_path + ' path ? [y/n]'
+			ip = raw_input()
+			if ip == 'y' or 'Y':
+				try:
+					os.makedirs(folder_path)
+				except OSError as e:
+					if e.errno != errno.EEXIST:
+						raise
+				else:
+					# directory created
+					print 'Directory created...'
+					pass
+			elif ip == 'n' or 'N':
+				# resort to default path to store the content
+				# exit for now
+				print 'Cannot store contents to the given directory'
+				break
 
 
 
