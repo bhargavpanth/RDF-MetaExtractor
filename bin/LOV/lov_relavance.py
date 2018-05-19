@@ -4,10 +4,12 @@ class LinkedOpenVocabulary(object):
 	
 	"""
 	LinkedOpenVocabulary
-	* Given a vocab - returns a set of vocabs relavant by first degree seperation of LOV
+
+	http://lov.okfn.org/dataset/lov/api/v2/vocabulary/list - URL to GET all vocabularies in LOD cloud
+	
 	"""
 
 	def __init__(self, vocab):
 		self.vocab = vocab
 
-		
+	
