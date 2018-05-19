@@ -1,5 +1,6 @@
 import os
 import csv
+import urllib2
 
 class Extractor(object):
 	
@@ -25,15 +26,31 @@ class Extractor(object):
 					domain = each_line[3]
 					resource_url = each_line[4]
 					url_list.append(resource_url)
-			return url_list
+			return url_list, domain
 		else:
 			print 'File does not exist'
 			return False
 		# read TSV/CSV file
 
-	def download_from_url(self):
-		pass
-	
+	def download_from_url(self, url_):
+		if type(url_) is list:
+			# iterate over the list
+			for each_url in url_:
+				self.__request(each_url)
+
+		elif type(url_) is str:
+			# hit a request
+			pass
+
+		else:
+			print 'invalid parameter passed as URL - type must be str'
+
+
+	def __request(self, url):
+		response = urllib2.urlopen(url)
+
+
+
 
 def main():
 	test = Extractor('dataset.tsv')
