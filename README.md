@@ -7,3 +7,7 @@
 * ```cd RDF-MetaExtractor/```
 * ```git checkout fuseki-base```
 * ```sh setup.sh``` or ```sudo pip install -r requirements.txt```
+
+#### LOV
+
+* ```http://lov.okfn.org/dataset/lov/api/v2/term/search?q=medical```

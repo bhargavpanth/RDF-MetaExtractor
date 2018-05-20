@@ -9,10 +9,11 @@ class Extractor(object):
 	docstring for Extractor
 	"""
 	
-	def __init__(self, fname):
+	def __init__(self, fname, path_to_save):
 		# asking for file name only - not the file path
 		# ensure appropriate messages are set to the user 
 		self.fname = fname
+		self.path_to_save = path_to_save
 
 
 
@@ -41,7 +42,8 @@ class Extractor(object):
 		if type(url_) is list:
 			# iterate over the list
 			for each_url in url_:
-				self.__request(each_url)
+				resp = self.__request(each_url)
+				self.__save_to_folder(resp)
 
 		elif type(url_) is str:
 			# hit a request
@@ -54,22 +56,21 @@ class Extractor(object):
 
 	def __request(self, url):
 		response = urllib2.urlopen(url)
+		return response
 
 
 
-
-	def save_to_folder(self, folder_path):
-		if os.path.exists(folder_path):
-			# path exists
-			pass
+	def __save_to_folder(self, response_object):
+		if os.path.exists(self.path_to_save):
+			# path exists - write file here
 			
 		else:
 			# ask if that path needs to be created
-			print 'Create ' + folder_path + ' path ? [y/n]'
+			print 'Create ' + self.path_to_save + ' path ? [y/n]'
 			ip = raw_input()
 			if ip == 'y' or 'Y':
 				try:
-					os.makedirs(folder_path)
+					os.makedirs(self.path_to_save)
 				except OSError as e:
 					if e.errno != errno.EEXIST:
 						raise
@@ -81,14 +82,15 @@ class Extractor(object):
 				# resort to default path to store the content
 				# exit for now
 				print 'Cannot store contents to the given directory'
-				break
 
-
+	def extract(self):
+		# orchestrates the download, extract and load process
+		pass
 
 
 def main():
-	test = Extractor('dataset.tsv')
-	test.read_file()
+	test = Extractor('dataset.tsv', './downloads/')
+	test.extract()
 
 
 if __name__ == '__main__':
