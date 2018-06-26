@@ -16,20 +16,22 @@ Dcterms: descriptor
 Dcterms: subject
 dct:title
 dct:description
+dcat:keyword
+dcat:theme
+rdfs:comment
+rdf:Description
+void:vocabulary
+
+
 dct:creator
 dct:publisher
 dct:license
-dcat:keyword
-dcat:theme
 
-rdfs:comment
 
-rdf:Description
 
 Void: Dataset
 Void: sparlqlEndpoint
 Void: urilookupendpoint
-void:vocabulary
 
 dataid:identifierScheme
 dataid:dataDescription
